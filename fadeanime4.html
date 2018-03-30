@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>anime</title>
+    <style>
+        body {
+            background-color: beige;
+            transition: all 1s;
+        }
+        
+        .bodyfadeout {
+            opacity: 0;
+        }
+        
+        button {
+            width: 40px;
+            height: 40px;
+            background-color: coral;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .anime4 {
+            animation: animemove4 2s linear forwards;
+        }
+        
+        @keyframes animemove4 {
+            0% {}
+            100% {
+                width: 100vw;
+                height: 100vh;
+                border-radius: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 999;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Fade Anime4</h1>
+    <button id="button4"></button>
+
+    <script>
+        const body = document.getElementsByTagName('body')[0];
+
+        function fadeOut() {
+            body.classList.add('bodyfadeout');
+        }
+
+        function google2() {
+            location.href = 'https://google.com'
+        }
+        var bt4 = document.getElementById('button4');
+        var posi = bt4.getBoundingClientRect();
+
+        bt4.addEventListener('click', function() {
+            bt4.style.position = 'absolute';
+            bt4.style.top = posi.top + 'px';
+            bt4.style.left = posi.left + 'px';
+            bt4.classList.add('anime4');
+            setTimeout(fadeOut, 2000);
+            setTimeout(google2, 3500);
+        });
+
+    </script>
+</body>
+
+</html>

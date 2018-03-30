@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>anime</title>
+    <style>
+        body {
+            background-color: beige;
+            transition: all 1s;
+        }
+        
+        .bodyfadeout {
+            opacity: 0;
+        }
+        
+        button {
+            width: 40px;
+            height: 40px;
+            background-color: coral;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+        
+        #a {
+            width: 0;
+            height: 100vh;
+            background-color: coral;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+        
+        .anime5 {
+            animation: animemove5 1.5s linear forwards;
+        }
+        
+        @keyframes animemove5 {
+            0% {}
+            100% {
+                width: 100vw;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Fade Anime5</h1>
+    <div id="a"></div>
+    <button class="button5" id="button5"></button>
+
+    <script>
+        const body = document.getElementsByTagName('body')[0];
+
+        function fadeOut() {
+            body.classList.add('bodyfadeout');
+        }
+
+        function google2() {
+            location.href = 'https://google.com'
+        }
+        var bt5 = document.getElementById('button5');
+        var a = document.getElementById('a');
+        bt5.addEventListener('click', function() {
+            a.classList.add('anime5');
+            setTimeout(fadeOut, 1500);
+            setTimeout(google2, 2500);
+        });
+
+    </script>
+</body>
+
+</html>
